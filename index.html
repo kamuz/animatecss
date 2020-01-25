@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Animate.css Sandbox</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <style>
+        #section-1 {
+            animation-delay: 0;
+            animation-duration: 1s;
+            animation-iteration-count: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="animated slideInDown text-center bg-primary text-white p-5">
+            <h1 class="display-4">Animate.css Sandbox</h1>
+        </header>
+        <section id="section-1" class="animated slideInLeft bg-light p-5 my-3">
+            <h1>Section One</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur nulla repudiandae quibusdam, culpa molestiae modi! Ut cum, totam ducimus! Assumenda temporibus dolor hic quod atque, commodi eos reiciendis sint tempora mollitia eaque aliquam, optio nostrum quam voluptatum, nobis impedit adipisci. Ipsum maiores, earum maxime corporis qui accusamus repellat necessitatibus, cum aliquam consectetur ipsa dicta minima fuga magnam delectus excepturi cupiditate rem consequatur optio praesentium culpa quam odit vel repellendus. Veritatis soluta perferendis temporibus officia, eaque impedit praesentium eum, ut eveniet pariatur non, est quibusdam excepturi amet repudiandae corporis porro. Ut ab minus, quis praesentium hic officiis saepe ea vero, qui!</p>
+        </section>
+        <section id="section-2" class="animated slideInRight bg-light p-5 my-3">
+            <h1 id="anim-head">Section Two</h1>
+            <p id="anim-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur nulla repudiandae quibusdam, culpa molestiae modi! Ut cum, totam ducimus! Assumenda temporibus dolor hic quod atque, commodi eos reiciendis sint tempora mollitia eaque aliquam, optio nostrum quam voluptatum, nobis impedit adipisci. Ipsum maiores, earum maxime corporis qui accusamus repellat necessitatibus, cum aliquam consectetur ipsa dicta minima fuga magnam delectus excepturi cupiditate rem consequatur optio praesentium culpa quam odit vel repellendus. Veritatis soluta perferendis temporibus officia, eaque impedit praesentium eum, ut eveniet pariatur non, est quibusdam excepturi amet repudiandae corporis porro. Ut ab minus, quis praesentium hic officiis saepe ea vero, qui!</p>
+        </section>
+        <div class="d-flex justify-content-center">
+            <button id="animateBtn" class="btn btn-primary btn-lg mb-5">Animate</button>
+        </div>
+    </div>
+</body>
+<script src="js/jquery.min.js"></script>
+<script>
+    $(function(){
+        $('#animateBtn').click(function(){
+            animate('#anim-head', 'bounce');
+            animate('#anim-body', 'pulse');
+            return false;
+        });
+
+        function animate(element, animation) {
+            $(element).addClass('animated ' + animation);
+            var wait = setTimeout(function() {
+                $(element).removeClass('animated ' + animation);
+            }, 1000);
+        }
+    });
+</script>
+</html>
